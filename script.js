@@ -63,4 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return array;
     }
+    const hiddenButton = document.getElementById('hiddenButton');
+    const embeddedPage = document.getElementById('embeddedPage');
+
+    hiddenButton.addEventListener('click', () => {
+        // Show the embedded page when the button is clicked
+        embeddedPage.style.display = 'block';
+        // Set the iframe source to "multiplayer.gg/physics"
+        embeddedPage.querySelector('iframe').src = 'https://multiplayer.gg/physics';
+    });
 });
