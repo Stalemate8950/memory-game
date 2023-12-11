@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H'];
+    const cards = ['Apple', 'Apple', 'Banana', 'Banana', 'Citrus', 'Citrus', 'Daniel', 'Daniel', 'Epricot', 'Epricot', 'Fudge', 'Fudge', 'Gwen', 'Gwen', 'Hi', 'Hi'];
 
     let shuffledCards = shuffle(cards);
     let flippedCards = [];
