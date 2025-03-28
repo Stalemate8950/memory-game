@@ -1,5 +1,5 @@
 
-
+console.log("Code Injector Loaded");
     // ==UserScript==
     // @name         Code Injector - Bonk.io
     // @version      1.0.4
