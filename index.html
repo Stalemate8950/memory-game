@@ -8,21 +8,11 @@
         iframe {
             width: 100%;
             min-height: 600px;
-            height: calc(100vh - 50px);
-            display: none; /* Initially hide the iframe */
+            height: calc(100vh - 50px); /* Adjust as needed */
         }
     </style>
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Shift') {
-                var iframe = document.getElementById('multiplayer-iframe');
-                iframe.src = "https://multiplayer.gg/physics";
-                iframe.style.display = 'block'; // Show the iframe
-            }
-        });
-    </script>
 </head>
 <body>
-    <iframe id="multiplayer-iframe" src="" frameborder="0"></iframe>
+    <iframe src="https://multiplayer.gg/physics" frameborder="0"></iframe>
 </body>
 </html>
