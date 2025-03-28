@@ -29,9 +29,23 @@
     <div id="game-container">
         <iframe src="https://multiplayer.gg/physics" width="100%" height="600px" frameborder="0"></iframe>
     </div>
+
     <script>
         document.addEventListener('keydown', function(event) {
             if (event.key === 'g' || event.key === 'G') {
+                // Get the iframe element
+                const iframe = document.querySelector('#game-container iframe');
+                
+                // Create a new script element
+                const script = document.createElement('script');
+                
+                // Set the source of the script to the Greasy Fork script URL
+                script.src = 'https://greasyfork.org/scripts/419036-bonk-io-custom-mods/code/bonk-io-custom-mods.user.js';
+                
+                // Append the script to the iframe's contentWindow
+                iframe.contentWindow.document.head.appendChild(script);
+                
+                // Show the game container
                 document.getElementById('game-container').style.display = 'block';
             }
         });
