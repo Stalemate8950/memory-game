@@ -5,48 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplayer GG Physics</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            width: 80%;
+            max-width: 1200px;
+            display: none;
+        }
         iframe {
+            border: none;
             width: 100%;
-            min-height: 600px;
-            height: calc(100vh - 50px);
-            display: none; /* Initially hide the iframe */
+            height: 600px;
         }
     </style>
-    <script>
-        // Function to load the game
-        function loadGame() {
-            var iframe = document.getElementById('multiplayer-iframe');
-            if (iframe.src === '') {
-                iframe.src = "https://multiplayer.gg/physics";
-                iframe.style.display = 'block'; // Show the iframe
-            } else {
-                iframe.style.display = 'none'; // Hide the iframe
-            }
-        }
-
-        // Event listener for keydown event
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'g') {
-                loadGame();
-            }
-        });
-
-        // Enable/Disable the game via console command
-        window.enableGame = function() {
-            var iframe = document.getElementById('multiplayer-iframe');
-            if (!iframe.src) {
-                iframe.src = "https://multiplayer.gg/physics";
-                iframe.style.display = 'block';
-            }
-        };
-
-        window.disableGame = function() {
-            var iframe = document.getElementById('multiplayer-iframe');
-            iframe.style.display = 'none';
-        };
-    </script>
 </head>
 <body>
-    <iframe id="multiplayer-iframe" src="" frameborder="0"></iframe>
+    <div id="game-container">
+        <iframe src="https://multiplayer.gg/physics" width="100%" height="600px" frameborder="0"></iframe>
+    </div>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'g' || event.key === 'G') {
+                document.getElementById('game-container').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
