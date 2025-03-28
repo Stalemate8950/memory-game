@@ -67,9 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const embeddedPage = document.getElementById('embeddedPage');
 
     hiddenButton.addEventListener('click', () => {
-        // Show the embedded page when the button is clicked
-        embeddedPage.style.display = 'block';
-        // Set the iframe source to "multiplayer.gg/physics"
-        embeddedPage.querySelector('iframe').src = 'https://multiplayer.gg/physics';
+    // Show the embedded page when the button is clicked
+    embeddedPage.style.display = 'block';
+    const iframe = embeddedPage.querySelector('iframe');
+    // Set the iframe source to "multiplayer.gg/physics"
+    iframe.src = 'https://multiplayer.gg/physics';
+
+    // When the iframe loads, inject your external script
+    iframe.addEventListener('load', () => {
+        // Access the iframe's document
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        
+        // Create a new script element
+        const script = iframeDoc.createElement('script');
+        // Set the src to your external GreasyFork script file's URL (adjust path as needed)
+        script.src = '/path/to/your/greasyforkScript.js';
+        
+        // Append the script to the head (or body) of the iframe's document
+        iframeDoc.head.appendChild(script);
     });
 });
+
