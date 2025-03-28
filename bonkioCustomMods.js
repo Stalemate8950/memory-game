@@ -6,7 +6,7 @@
     // @version      0.5
     // @description  Some custom enhancements to bonk.io
     // @author       You
-    // @match        https://bonk.io/*
+    // @match        https://multiplayer.gg/physics/
     // @grant        none
     // ==/UserScript==
      
