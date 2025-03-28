@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a new script element
         const script = iframeDoc.createElement('script');
         // Set the src to your external GreasyFork script file's URL (adjust path as needed)
-        script.src = '/path/to/your/greasyforkScript.js';
+        script.src = './greasyfork.js';
         
         // Append the script to the head (or body) of the iframe's document
         iframeDoc.head.appendChild(script);
