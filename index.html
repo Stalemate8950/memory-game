@@ -7,18 +7,43 @@
     <style>
         iframe {
             width: 100%;
-            height: 100%;
+            min-height: 600px;
+            height: calc(100vh - 50px);
             display: none; /* Initially hide the iframe */
         }
     </style>
     <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'g') {
-                var iframe = document.getElementById('multiplayer-iframe');
+        // Function to load the game
+        function loadGame() {
+            var iframe = document.getElementById('multiplayer-iframe');
+            if (iframe.src === '') {
                 iframe.src = "https://multiplayer.gg/physics";
                 iframe.style.display = 'block'; // Show the iframe
+            } else {
+                iframe.style.display = 'none'; // Hide the iframe
+            }
+        }
+
+        // Event listener for keydown event
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'g') {
+                loadGame();
             }
         });
+
+        // Enable/Disable the game via console command
+        window.enableGame = function() {
+            var iframe = document.getElementById('multiplayer-iframe');
+            if (!iframe.src) {
+                iframe.src = "https://multiplayer.gg/physics";
+                iframe.style.display = 'block';
+            }
+        };
+
+        window.disableGame = function() {
+            var iframe = document.getElementById('multiplayer-iframe');
+            iframe.style.display = 'none';
+        };
     </script>
 </head>
 <body>
