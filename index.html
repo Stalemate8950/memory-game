@@ -49,6 +49,12 @@
                 document.getElementById('game-container').style.display = 'block';
             }
         });
+
+        window.addEventListener('message', function(event) {
+            if (event.origin !== 'https://multiplayer.gg') return; // Check the origin of the message
+            console.log('Received message from iframe:', event.data);
+            // Handle the message as needed
+        });
     </script>
 </body>
 </html>
