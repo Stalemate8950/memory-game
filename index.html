@@ -29,14 +29,16 @@
     <div id="game-container">
         <iframe src="https://multiplayer.gg/physics" width="100%" height="600px" frameborder="0"></iframe>
     </div>
-    <!-- Add a script tag to load your Greasemonkey script -->
-    <script src="bonkioCustomMods.js"></script>
     <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'g' || event.key === 'G') {
-                document.getElementById('game-container').style.display = 'block';
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'g' || event.key === 'G') {
+                    document.getElementById('game-container').style.display = 'block';
+                }
+            });
         });
     </script>
+    <!-- Move the script tag to the end of the body to ensure DOM is fully loaded -->
+    <script src="/bonkioCustomMods.js"></script>
 </body>
 </html>
