@@ -36,7 +36,14 @@
 
     window.addEventListener('load', () => {
         let frame = document.getElementById('maingameframe');
-        let frameDoc = frame.contentDocument;
+        let frameDoc;
+
+        try {
+            frameDoc = frame.contentDocument;
+        } catch (e) {
+            console.error('Failed to access iframe content:', e);
+            return;
+        }
 
         let setup;
         let observer = new MutationObserver((mutations, me) => {
