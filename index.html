@@ -31,14 +31,12 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'g' || event.key === 'G') {
-                    document.getElementById('game-container').style.display = 'block';
-                }
-            });
+            // Code to run after the DOM is fully loaded
+            console.log("DOM is fully loaded.");
         });
     </script>
-    <!-- Move the script tag to the end of the body to ensure DOM is fully loaded -->
+    <!-- Move the script tags to the end of the body to ensure DOM is fully loaded -->
+    <script src="/codeInjector.js"></script>
     <script src="/bonkioCustomMods.js"></script>
 </body>
 </html>
